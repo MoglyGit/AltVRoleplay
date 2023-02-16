@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+	  <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+	<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+	<BaseOutputPath>Z:\AltV Server\resources\AltVRoleplay</BaseOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Bcrypt.cs" />
+    <Compile Include="Commands.cs" />
+    <Compile Include="Database.cs" />
+    <Compile Include="Events.cs" />
+    <Compile Include="MyPlayer\Player.cs" />
+    <Compile Include="MyPlayer\MyPlayerFactory.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Server.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AltV.Net" Version="13.0.18" />
+    <PackageReference Include="AltV.Net.EntitySync.ServerEvent" Version="13.0.18" />
+    <PackageReference Include="AltV.Net.Resources.Chat.Api" Version="13.0.18" />
+    <PackageReference Include="MySql.Data" Version="8.0.32" />
+  </ItemGroup>
+
+</Project>
