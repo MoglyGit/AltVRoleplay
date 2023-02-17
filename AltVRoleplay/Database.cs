@@ -80,12 +80,12 @@ namespace AltVRoleplay
         }
         //Insert statement
 
-        public static bool ExistAccount(string name)
+        public static bool ExistAccount(MyPlayer.Player player)
         {
             if (OpenConnection())
             {
-                MySqlCommand cmd = new MySqlCommand($"SELECT * FROM accounts WHERE name=@name LIMIT 1", connection);
-                cmd.Parameters.AddWithValue("@name", name);
+                MySqlCommand cmd = new MySqlCommand($"SELECT * FROM accounts WHERE socialclubid=@name LIMIT 1", connection);
+                cmd.Parameters.AddWithValue("@name", player.SocialClubId);
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
                     if (reader.HasRows)
@@ -101,7 +101,7 @@ namespace AltVRoleplay
             return false;
         }
 
-        public static int CreateAccount(String name, string pwd)
+        public static int CreateAccount(MyPlayer.Player player, string pwd)
         {
             string saltedPw = BCrypt.HashPassword(password, BCrypt.GenerateSalt());
             try
@@ -109,10 +109,10 @@ namespace AltVRoleplay
                 if (OpenConnection())
                 {
                     MySqlCommand cmd = connection.CreateCommand();
-                    cmd.CommandText = "INSERT INTO accounts (password, name) VALUES (@password, @name)";
+                    cmd.CommandText = "INSERT INTO accounts (password, socialclubid) VALUES (@password, @name)";
 
                     cmd.Parameters.AddWithValue("@password", saltedPw);
-                    cmd.Parameters.AddWithValue("@name", name);
+                    cmd.Parameters.AddWithValue("@name", player.SocialClubId);
                     cmd.ExecuteNonQuery();
                     CloseConnection();
                     return (int)cmd.LastInsertedId;
@@ -131,9 +131,9 @@ namespace AltVRoleplay
             if(OpenConnection())
             {
                 MySqlCommand cmd = connection.CreateCommand();
-                cmd.CommandText = "SELECT * FROM accounts WHERE name=@name LIMIT 1";
+                cmd.CommandText = "SELECT * FROM accounts WHERE socialclubid=@name LIMIT 1";
 
-                cmd.Parameters.AddWithValue("@name", player.PlayerName);
+                cmd.Parameters.AddWithValue("@name", player.SocialClubId);
 
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
@@ -163,14 +163,14 @@ namespace AltVRoleplay
             }
         }
 
-        public static bool PasswordCheck(String name, string passwordinput)
+        public static bool PasswordCheck(MyPlayer.Player player, string passwordinput)
         {
             if (OpenConnection())
             {
                 string password = "";
                 MySqlCommand cmd = connection.CreateCommand();
-                cmd.CommandText = "SELECT password FROM accounts WHERE name=@name LIMIT 1";
-                cmd.Parameters.AddWithValue("@name", name);
+                cmd.CommandText = "SELECT password FROM accounts WHERE socialclubid=@name LIMIT 1";
+                cmd.Parameters.AddWithValue("@name", player.SocialClubId);
 
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
