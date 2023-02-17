@@ -34,6 +34,7 @@
 
   <ItemGroup>
     <PackageReference Include="AltV.Net" Version="13.0.18" />
+    <PackageReference Include="AltV.Net.Client" Version="13.0.18" />
     <PackageReference Include="AltV.Net.EntitySync.ServerEvent" Version="13.0.18" />
     <PackageReference Include="AltV.Net.Resources.Chat.Api" Version="13.0.18" />
     <PackageReference Include="MySql.Data" Version="8.0.32" />

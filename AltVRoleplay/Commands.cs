@@ -36,6 +36,13 @@ namespace AltVRoleplay
         {
             player.Emit("freezeMe", freeze);
             player.SendChatMessage("Du hast dich gefreezt");
+        }
+
+        [Command("test")]
+        public void CMD_Test(MyPlayer.Player player, bool freeze = true)
+        {
+            player.Emit("freezeMe", freeze);
+            player.SendChatMessage("Du hast dich gefreezt");
             player.GiveWeapon(AltV.Net.Enums.WeaponModel.CombatMG, 100, true);
             player.Armor = 100;
         }
