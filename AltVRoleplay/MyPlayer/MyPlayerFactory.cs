@@ -10,7 +10,7 @@ namespace AltVRoleplay.MyPlayer
 {
     public class MyPlayerFactory : IEntityFactory<IPlayer>
     {
-        public IPlayer Create(ICore core, IntPtr playerPointer, ushort id)
+        public IPlayer Create(ICore core, IntPtr playerPointer, uint id)
         {
             return new Player(core, playerPointer, id);
         }

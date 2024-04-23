@@ -1,20 +1,158 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <OutputType>Library</OutputType>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-	  <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
-	<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-	<BaseOutputPath>Z:\AltV Server\resources\AltVRoleplay</BaseOutputPath>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <BaseOutputPath>Z:\AltV Server\resources\AltVRoleplay</BaseOutputPath>
   </PropertyGroup>
-
   <ItemGroup>
-    <Compile Include="Bcrypt.cs" />
-    <Compile Include="Commands.cs" />
-    <Compile Include="Database.cs" />
-    <Compile Include="Events.cs" />
+    <Compile Include="Autohaus\AutohausCar.cs" />
+    <Compile Include="Autohaus\AutohausList.cs" />
+    <Compile Include="Autohaus\Autohaus_Handler.cs" />
+    <Compile Include="Bank\BankTransfers.cs" />
+    <Compile Include="Bank\BankTransfersList.cs" />
+    <Compile Include="Bank\BankTransfersList_Firmen.cs" />
+    <Compile Include="Bank\BankTransfers_Firmen.cs" />
+    <Compile Include="CityHall\CityHall.cs" />
+    <Compile Include="Commands\Police_Commands.cs" />
+    <Compile Include="Events\Admin\Admin_Handler.cs" />
+    <Compile Include="Events\Bank\BankEvents.cs" />
+    <Compile Include="Events\Dealer\Dealer_Events.cs" />
+    <Compile Include="Events\Dealer\Dealer_Handler.cs" />
+    <Compile Include="Events\Firmen\CarDealer\CarDealer_Events.cs" />
+    <Compile Include="Events\Firmen\CarDealer\CarDealer_Handler.cs" />
+    <Compile Include="Events\Firmen\Firmen_Events.cs" />
+    <Compile Include="Events\Firmen\Firmen_Handler.cs" />
+    <Compile Include="Events\Firmen\Mechanic\Mechanic_Handler.cs" />
+    <Compile Include="Events\Firmen\Tuning\TuningEvents.cs" />
+    <Compile Include="Events\Fishing\FishSell_Handler.cs" />
+    <Compile Include="Events\InteractionMenu\InteractionMenuVehicle_Events.cs" />
+    <Compile Include="Events\InteractionMenu\InteractionMenu_Events.cs" />
+    <Compile Include="Events\IronFarm\IronFarmHandler.cs" />
+    <Compile Include="Events\LTDGas\LTDGasstation_Handler.cs" />
+    <Compile Include="Events\LTDGas\LTD_Events.cs" />
+    <Compile Include="Events\Player\PlayerInv_Handler.cs" />
+    <Compile Include="Events\Shop247\Shop247Events.cs" />
+    <Compile Include="Events\Shop247\Shop247Handler.cs" />
+    <Compile Include="Events\Vehicle\Boats\Trailer_Events.cs" />
+    <Compile Include="Events\Vehicle\Boats\Trailer_Handler.cs" />
+    <Compile Include="Events\Chat\ChatHandler.cs" />
+    <Compile Include="Events\Entitys\EntityEvents.cs" />
+    <Compile Include="Events\Factions\ForAllFactions.cs" />
+    <Compile Include="Events\Factions\Garbage\GarbageEvetns.cs" />
+    <Compile Include="Events\Fishing\FishingEvents.cs" />
+    <Compile Include="Events\Fishing\FishingInventoryHandler.cs" />
+    <Compile Include="Events\House\HouseEvents.cs" />
+    <Compile Include="Events\House\HouseInterrior.cs" />
+    <Compile Include="Events\IronFarm\IronFarmEvents.cs" />
+    <Compile Include="Events\Licenses\Driving.cs" />
+    <Compile Include="Events\MDC\MdcEvents.cs" />
+    <Compile Include="Events\Player\AdminEvents.cs" />
+    <Compile Include="Events\Player\PlayerProgressEvents.cs" />
+    <Compile Include="Events\RouteCheckpoint\Checkpoint.cs" />
+    <Compile Include="Events\Tree\TreeEvents.cs" />
+    <Compile Include="Events\Vehicle\BoatAnchor_Handler.cs" />
+    <Compile Include="Events\Vehicle\Flatbed\FlatBed_Events.cs" />
+    <Compile Include="Events\Vehicle\Flatbed\FlatBed_Handler.cs" />
+    <Compile Include="Events\Vehicle\Marquis\MarquisInterrior.cs" />
+    <Compile Include="Events\Vehicle\VehInvEvents.cs" />
+    <Compile Include="Events\Wardrobe\WardrobeEvents.cs" />
+    <Compile Include="Events\Wardrobe\Wardrobe_Handler.cs" />
+    <Compile Include="Events\WeaponShop\WeaponShopEvents.cs" />
+    <Compile Include="Factions\Garbage\GarbageHandler.cs" />
+    <Compile Include="Items\Backpack_Events.cs" />
+    <Compile Include="Items\DrivingLicense.cs" />
+    <Compile Include="Items\DrivingLicenseList.cs" />
+    <Compile Include="Items\Perso.cs" />
+    <Compile Include="Items\PersoList.cs" />
+    <Compile Include="Items\Useable\ItemEffect.cs" />
+    <Compile Include="Jobs\GravelWorker.cs" />
+    <Compile Include="Jobs\LumberJack.cs" />
+    <Compile Include="JS Objects\Crime.cs" />
+    <Compile Include="JS Objects\CrimeList.cs" />
+    <Compile Include="JS Objects\MdcPlayer.cs" />
+    <Compile Include="Minijobs\Golf\MiniJobGolf.cs" />
+    <Compile Include="Minijobs\Lieferant\MiniJobLieferant.cs" />
+    <Compile Include="Muellspace\Muell.cs" />
+    <Compile Include="Muellspace\MuellEvent.cs" />
+    <Compile Include="Muellspace\MuellList.cs" />
+    <Compile Include="MyPlayer\GetPlayer.cs" />
+    <Compile Include="MyPlayer\OfflinePlayer.cs" />
+    <Compile Include="MyVehicle\MyVehicleHandler.cs" />
+    <Compile Include="Objects\DamageTaken.cs" />
+    <Compile Include="Objects\Gravel.cs" />
+    <Compile Include="Objects\Logs.cs" />
+    <Compile Include="Objects\Object.cs" />
+    <Compile Include="Objects\ObjectLists.cs" />
+    <Compile Include="Objects\Static\ServerGravel.cs" />
+    <Compile Include="Objects\Static\ServerMiningLights.cs" />
+    <Compile Include="Objects\Static\ServerTrees.cs" />
+    <Compile Include="Objects\Tree.cs" />
+    <Compile Include="Ped\PedEntity.cs" />
+    <Compile Include="Ped\StaticPeds.cs" />
+    <Compile Include="ServerMoney.cs" />
+    <Compile Include="ServerLists.cs" />
+    <Compile Include="ServerMethods.cs" />
+    <Compile Include="SQL\Factions\DutyHistory\FactionDutyHistory.cs" />
+    <Compile Include="SQL\Firma\CarDealer\CarDealerSQL.cs" />
+    <Compile Include="SQL\Firma\Class\CarDealerContract.cs" />
+    <Compile Include="SQL\Firma\Class\Firma.cs" />
+    <Compile Include="SQL\Firma\Class\FirmaWorker.cs" />
+    <Compile Include="SQL\Firma\FirmaList.cs" />
+    <Compile Include="SQL\Firma\FirmaSql.cs" />
+    <Compile Include="SQL\Firma\FirmaWorkerSql.cs" />
+    <Compile Include="SQL\Firma\FirmenNameHandler.cs" />
+    <Compile Include="SQL\Friends\FriendSql.cs" />
+    <Compile Include="SQL\Inventory\Class\Wardrobe.cs" />
+    <Compile Include="SQL\Inventory\Interface\Inventory.cs" />
+    <Compile Include="SQL\Inventory\VehInvSql.cs" />
+    <Compile Include="SQL\Inventory\WardrobeList.cs" />
+    <Compile Include="SQL\Inventory\WardrobeSql.cs" />
+    <Compile Include="SQL\LTD Gas\Class\LTDGasStation.cs" />
+    <Compile Include="SQL\LTD Gas\LTDList.cs" />
+    <Compile Include="SQL\LTD Gas\LTDSQL.cs" />
+    <Compile Include="SQL\Peds\PedSql.cs" />
+    <Compile Include="SQL\Store\Class\Store_247.cs" />
+    <Compile Include="SQL\Store\StoreList.cs" />
+    <Compile Include="SQL\Store\StoreSql.cs" />
+    <Compile Include="SQL\Tuning\VehicleMods.cs" />
+    <Compile Include="Text\DisconnectInfo.cs" />
+    <Compile Include="Text\StaticTextLabel.cs" />
+    <Compile Include="Text\TextLabel.cs" />
+    <Compile Include="Appartments\Appartment.cs" />
+    <Compile Include="Appartments\AppartmentList.cs" />
+    <Compile Include="Events\KeyEvents\KeyPressed.cs" />
+    <Compile Include="Events\Player\PlayerInventory.cs" />
+    <Compile Include="Events\Vehicle\VehicleEvents.cs" />
+    <Compile Include="Items\Backpack.cs" />
+    <Compile Include="Items\BackpackList.cs" />
+    <Compile Include="Items\Cloth.cs" />
+    <Compile Include="Items\ClothList.cs" />
+    <Compile Include="Items\GroundItems.cs" />
+    <Compile Include="Items\GroundList.cs" />
+    <Compile Include="Items\ItemList.cs" />
+    <Compile Include="Items\Items.cs" />
+    <Compile Include="Items\PropList.cs" />
+    <Compile Include="Items\Props.cs" />
+    <Compile Include="Items\WeaponInfo.cs" />
+    <Compile Include="MyVehicle\MyVehicle.cs" />
+    <Compile Include="MyVehicle\MyVehicleFactory.cs" />
+    <Compile Include="MyVehicle\VehList.cs" />
+    <Compile Include="ServerEnums.cs" />
+    <Compile Include="SQL\Bcrypt.cs" />
+    <Compile Include="Commands\Player_Commands.cs" />
+    <Compile Include="Commands\Admin_Commands.cs" />
+    <Compile Include="SQL\Database.cs" />
+    <Compile Include="SQL\DataGet.cs" />
+    <Compile Include="SQL\DataSet.cs" />
+    <Compile Include="Messages\Message.cs" />
+    <Compile Include="Events\Ped\PedEvents.cs" />
+    <Compile Include="Events\Login\LoginEvents.cs" />
+    <Compile Include="Events\Player\PlayerEvents.cs" />
+    <Compile Include="JS Objects\EditorData.cs" />
     <Compile Include="MyPlayer\Player.cs" />
     <Compile Include="MyPlayer\MyPlayerFactory.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -23,21 +161,24 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Server.cs" />
+    <Compile Include="Voice\Channels.cs" />
   </ItemGroup>
-
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-
   <ItemGroup>
-    <PackageReference Include="AltV.Net" Version="13.0.18" />
-    <PackageReference Include="AltV.Net.Client" Version="13.0.18" />
-    <PackageReference Include="AltV.Net.EntitySync.ServerEvent" Version="13.0.18" />
-    <PackageReference Include="AltV.Net.Resources.Chat.Api" Version="13.0.18" />
-    <PackageReference Include="MySql.Data" Version="8.0.32" />
+    <PackageReference Include="AltV.Net" Version="16.0.8" />
+    <PackageReference Include="AltV.Net.Async" Version="16.0.8" />
+    <PackageReference Include="AltV.Net.Client" Version="16.0.8" />
+    <PackageReference Include="AltV.Net.EntitySync" Version="1.18.0" />
+    <PackageReference Include="AltV.Net.EntitySync.ServerEvent" Version="16.0.8" />
+    <PackageReference Include="AltV.Net.Resources.Chat.Api" Version="16.0.8" />
+    <PackageReference Include="AltV.Net.Shared" Version="16.0.8" />
+    <PackageReference Include="Enums.NET" Version="4.0.2" />
+    <PackageReference Include="MySql.Data" Version="8.3.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
-
 </Project>
