@@ -1,0 +1,124 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+p {
+    display: inline;
+    font-size: 20px;
+    padding: 5px;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 4px #000000;
+}
+
+div {
+    margin: 1rem auto;
+    background-color: #48abe0;
+}
+
+.semi-circle {
+    width: 20rem;
+    height: 10rem;
+    background-color: #48abe0;
+    border-radius: 10rem 10rem 0 0;
+}
+
+#speedtext {
+    position: absolute;
+    margin: 10px;
+}
+
+#range {
+    position: absolute;
+    margin: 10px;
+    margin-top: 30px;
+}
+
+#lock {
+    position: absolute;
+    margin: 10px;
+    margin-top: 25px;
+    margin-left: 150px;
+}
+
+#fillwarning {
+    position: absolute;
+    margin: 10px;
+    margin-top: 25px;
+    margin-left: 190px;
+}
+
+#motor {
+    position: absolute;
+    margin: 10px;
+    margin-top: 25px;
+    margin-left: 220px;
+}
+
+#nos {
+    position: absolute;
+    margin: 10px;
+    margin-left: 310px;
+    background-color: #00000000;
+}
+
+#noscharges {
+    font-size: 15px;
+}
+
+.Tempomat {
+    position: absolute;
+    background-color: rgba(87, 87, 87, 0.438);
+    width: 340px;
+    height: 90px;
+    margin-top: 48%;
+    margin-left: 18%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+}
+#tank {
+    color: #ffffff;
+    text-shadow: 2px 2px 3px #000000;
+}
+
+#fillbar {
+    position: absolute;
+    background-color: #b60600;
+    width: 140px;
+    height: 15px;
+    margin-top: 0%;
+    margin-left: 46%;
+    padding: 3px;
+    box-shadow: 0px 0px 7px rgb(0, 0, 0);
+    border-radius: 8px;
+}
+#fillbarmax {
+    position: absolute;
+    background-color: #000000be;
+    width: 140px;
+    height: 15px;
+    margin-top: 0%;
+    margin-left: 46%;
+    padding: 3px;
+    box-shadow: 0px 0px 7px rgb(0, 0, 0);
+    border-radius: 8px;
+}
+
+#speedbar {
+    position: absolute;
+    background-color: #a300009d;
+    width: 333px;
+    height: 1px;
+    margin-top: 23%;
+    margin-left: 0%;
+    padding: 3px;
+    box-shadow: 0px 0px 7px rgb(0, 0, 0);
+    border-radius: 8px;
+    transition: width 0.1s;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}

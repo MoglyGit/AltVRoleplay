@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Apartment</title>
+    <link rel="stylesheet" href="style.css">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+  </head>
+  <body>
+	<div id="bankbox">
+    <img id="img1" class="center" src="images/apartment1.png" height="100" style="display: none"/>
+    <div id="text" class="center">
+      <p id="info">
+      </p>
+    </div>
+      <div id="ApartmentRent" style="display: none;">
+        <br>
+        <input id="rent" class="center button" type="submit" onclick="tryRentApartment()" value="Mieten"></input>
+      </div>
+      <br>
+      <input id="garbage" class="center button" type="submit" onclick="getGarbage()" value="Müll abholen" style="display: none;"></input>
+      <div id="ApartmentOwned" style="display: none;">
+        <br>
+        <input id="in" class="center button" type="submit" onclick="tryEnterApartment()" value="Betreten"></input>
+        <br>
+        <input id="ring" class="center button" type="submit" onclick="ringByApartment()" value="Klingeln"></input>
+        <div id="lock" style="display: none;">
+          <br>
+          <input class="center button" type="submit" onclick="tryLockingApartment()" value="Auf-/Abschließen"></input>
+        </div>
+        <br>
+        <input id="einbrechen" class="center button" type="submit" onclick="tryPickingApartment()" value="Einbrechen"></input>
+
+      </div>
+      <div id="ApartmentOwner" style="display: none;">
+        <br>
+        <input id="in" class="center button" type="submit" onclick="tryEnterApartment()" value="Betreten"></input>
+        <br>
+        <input id="ring" class="center button" type="submit" onclick="ringByApartment()" value="Klingeln"></input>
+        <div id="lock2" style="display: none;">
+          <br>
+          <input class="center button" type="submit" onclick="tryLockingApartment()" value="Auf-/Abschließen"></input>
+        </div>
+        <br>
+        <input id="unrent" class="center button" style="background-color: rgb(185, 0, 0);" type="submit" onclick="unrentApartment()" value="Kündigen"></input>
+      </div>
+
+      <div id="ApartmentOut" style="display: none;">
+        <div id="lock3" style="display: none;">
+          <br>
+          <input class="center button" type="submit" onclick="tryLockingApartment()" value="Auf-/Abschließen"></input>
+        </div>
+        <br>
+        <input id="out" class="center button" type="submit" onclick="tryLeaveApartment()" value="Verlassen"></input>
+      </div>
+      <br>
+      <input class="center button" style="background-color: rgb(185, 0, 0);" type="submit" onclick="closeApartmentView()" value="Schliessen"></input>
+  </div>
+  </body>
+  <script src="js/apartment.js"></script>
+</html>

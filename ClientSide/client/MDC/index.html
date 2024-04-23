@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Police</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="style.css">
+<style>
+html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
+
+#welcome{
+	margin-left: 700px;
+	margin-top: -600px;
+	font-family: "Arial Black";
+	font-size: 50px;
+	color: white;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#smaller {
+	width: 200px;
+	height: 200px;
+}
+</style>
+</head>
+<body>
+	<div class="window w3-theme-l5">
+	<!-- Navbar -->
+	<div class="">
+	 <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
+	  <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2"><i class="fa fa-bars"></i></a>
+	  <a href="#" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i class="fa fa-home w3-margin-right"></i>Home</a>
+	  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="News"><i class="fa fa-globe"></i></a>
+	  <a href="personSearch.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Person Suche"><i class="fa fa-user"></i></a>
+	  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Messages"><i class="fa fa-envelope"></i></a>
+	  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="exit" onclick="alt.emit('closeView')" style="background-color: rgba(255, 0, 0, 0.767);">
+		Exit
+	  </a>
+	 </div>
+	</div>
+
+	<!-- Page Container -->
+	<div class="w3-container w3-content" style="max-width:1400px;margin-top:80px;">    
+	<!-- The Grid -->
+		<div class="w3-row">
+		
+			<!-- Middle Column -->
+			<div class="w3-col m7">
+			
+			  <div class="w3-row-padding">
+				<p class="w3-center"><img src="images/mdc.png"></p>
+				<div id="welcome">Willkommen
+				<p id="policeName">Leon Bergsen</p></div>
+			  </div>
+		  
+			  
+			<!-- End Middle Column -->
+			</div>
+	 
+		 
+		  
+		<!-- End Right Column -->
+		</div>
+		
+	<!-- End Grid -->
+	</div>
+	</div>
+  
+<script src="js/scriptindex.js"></script>
+
+</body>
+</html> 

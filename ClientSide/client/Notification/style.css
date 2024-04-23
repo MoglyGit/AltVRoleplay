@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Mochiy+Pop+P+One&family=Montserrat&family=Oswald:wght@300&family=Varela+Round&family=ZCOOL+KuaiLe&display=swap');
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 18px;
+}
+
+.center {
+  overflow: hidden;
+  position: absolute;
+  margin-top: 30%;
+  left: 90%;
+  width: 310px;
+  height: 290px;
+  transform: translate(-50%,-50%);
+}
+
+.check {
+  border-radius: 5px;
+  width: 280px;
+  height: 50px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  background-color: #2B3246;
+  cursor:pointer;
+  color: #0ad406;
+  margin: 20px;
+}
+.check:hover{
+  background-color: rgba(147, 209, 117, 0.50);
+  transition:0.5s;
+}
+
+.color {
+  animation: color 2s linear infinite;
+}
+
+
+.info {
+  border-radius: 5px;
+  width: 280px;
+  height: 50px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  background-color: #2B3246;
+  cursor:pointer;
+  color: rgb(82, 125, 243);
+  margin: 20px;
+}
+
+.spin {
+  animation: spin 2s linear infinite;
+}
+
+.info:hover
+{
+  background-color: rgba(82, 125, 243, 0.50);
+  transition:0.5s;
+}
+
+.warning {
+  border-radius: 5px;
+  width: 280px;
+  height: 50px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  background-color: #2B3246;
+  cursor:pointer;
+  color: rgb(247, 149, 72);
+  margin: 20px;
+}
+
+.warning:hover{
+  background-color: rgba(247, 149, 73, 0.50);
+  transition:0.5s;
+}
+
+
+.rotate {
+  animation: rotate 2s linear infinite;
+}
+.danger {
+  border-radius: 5px;
+  width: 280px;
+  height: 50px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  background-color: #2B3246;
+  cursor:pointer;
+  color: rgb(255, 10, 1);
+  margin: 20px;
+}
+
+.danger:hover
+{
+  background-color: rgba(255, 10, 1, 0.33);
+  transition:0.5s;
+}
+
+
+.shine {
+  animation: shine 2s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes color {
+  50% {
+   color: #2B3246;
+  }
+  100% {
+    color: #0ad406;
+  }
+}
+
+@keyframes rotate {
+ 0% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(90deg);
+  }
+  40% {
+    transform: rotate(0deg);
+  }
+  80% {
+    transform: rotate(-90deg);
+  }
+}
+
+@keyframes shine {
+  0% {
+   color: #2B3246;
+  }
+  50% {
+    text-shadow:
+      0 0 5px #fff,
+      0 0 10px #fff,
+      0 0 40px red,
+      0 0 60px red,
+      0 0 80px red;
+  }
+}

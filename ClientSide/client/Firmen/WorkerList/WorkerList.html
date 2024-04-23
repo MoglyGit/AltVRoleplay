@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Firmen Worker</title>
+    <link rel="stylesheet" href="style.css">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+  </head>
+  <body>
+	<div id="mainmenu" class="center box">
+        <div id="text" class="center">
+        <p id="info">Mitarbeiter: 
+        </p>
+        </div>
+        <br>
+        <div id="worker"></div>
+        <input class="center button" style="background-color: rgb(185, 0, 0);" type="submit" onclick="closeWorkerHud()" value="Schliessen"></input>
+    </div>
+    <div id="workerInfo" class="center box" style="display: none;">
+        <p id="infoWorker"> 
+        </p>
+        <input class="center button" style="background-color: rgb(0, 113, 148);" type="submit" onclick="showChangegehalt()" value="Gehalt"></input>
+        <input class="center button" style="background-color: rgb(0, 113, 148);" type="submit" onclick="showChangerank()" value="Rang"></input>
+        <input class="center button" style="background-color: rgb(185, 0, 0);" type="submit" onclick="HomeWorkerHud()" value="Zurück"></input>
+    </div>
+    <div id="workerGehalt" style="display: none;" class="center box">
+        <form onsubmit="changeGehalt(event)">
+          <input type="number" id="newgehalt" min="1" max="1000000" step="1" value="1"></input><br>
+          <input class="center button" style="background-color: rgb(0, 148, 0);" type="submit" value="Festlegen"></input>
+        </form>
+        <input class="center button" style="background-color: rgb(185, 0, 0);" type="submit" onclick="showWorkerInfo()" value="Zurück"></input>
+    </div>
+    <div id="workerRank" style="display: none;" class="center box">
+        <input class="center button" style="background-color: rgb(243, 186, 0);" type="submit" onclick="changeRank(-1)" value="Entlassen"></input>
+        <input class="center button" style="background-color: rgb(0, 113, 148);" type="submit" onclick="changeRank(3)" value="Owner"></input>
+        <input class="center button" style="background-color: rgb(0, 113, 148);" type="submit" onclick="changeRank(2)" value="Manager"></input>
+        <input class="center button" style="background-color: rgb(0, 113, 148);" type="submit" onclick="changeRank(1)" value="Arbeiter"></input>
+        <input class="center button" style="background-color: rgb(0, 113, 148);" type="submit" onclick="changeRank(0)" value="Praktikant"></input>
+        <input class="center button" style="background-color: rgb(185, 0, 0);" type="submit" onclick="showWorkerInfo()" value="Zurück"></input>
+    </div>
+  </body>
+  <script src="js/firmenWorker.js"></script>
+</html>

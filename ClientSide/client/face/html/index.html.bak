@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="content">
+	  <h1>Charackter</h1>
+	  <p id="warning"></p>
+	  <div>
+		<div>
+        <label for="password">Vater:</label>
+        <br><input type="range" min="0", max="10" value="Vater" onchange="changeVather(this.value)"></input>
+		<br><label for="password">Mother:</label>
+        <br><input type="range" min="0", max="10" value="Vater"></input>
+		<br><label for="password">Skin1:</label>
+        <br><input type="range" min="0", max="10" value="Vater"></input>
+		<br><label for="password">Skin2:</label>
+        <br><input type="range" min="0", max="10" value="Vater"></input>
+		</div>
+		<input type="submit" onclick="SyncPlayer()" value="Done">
+    </div>
+	</div>
+	<script src="js/login.js"></script>
+  </body>
+</html>

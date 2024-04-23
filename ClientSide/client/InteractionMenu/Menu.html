@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Player Menu</title>
+        <link rel="stylesheet" href="style.css" />
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    </head>
+    <body>
+        <div class="container">
+            <div id="menu" class="menu box">
+                <input class="center button" style="background-color: rgba(0, 80, 185, 0.712);" type="submit" onclick="ShowPlayer()" value="Spieler"></input><br>
+                <input class="center button" style="background-color: rgba(0, 80, 185, 0.712);" type="submit" onclick="ShowMenu(3)" value="Animation"></input><br>
+                <input class="center button" style="background-color: rgba(0, 80, 185, 0.712); display: none;" type="submit" onclick="ShowFraktion()" value="Fraktion" id="FrakMenu"></input><br>
+                <input class="center button" style="background-color: rgba(0, 80, 185, 0.712); display: none;" type="submit" onclick="ShowFirma()" value="Firma" id="FirmenMenu"></input><br>
+                <input class="center button" style="background-color: rgba(0, 185, 25, 0.712); " type="submit" onclick="ShowGuide()" value="Afänger Guide"></input><br>
+                <input class="center button" style="background-color: rgba(185, 6, 0, 0.712);" type="submit" onclick="CallSupport()" value="Support / Report"></input>
+            </div>
+            <div id="playerAnimation" class="menu box" style="display: none;">
+                <input class="center button" style="background-color: rgba(0, 80, 185, 0.712);" type="submit" onclick="ShowAnimList(1)" value="Aufgeben"></input><br>
+                <input class="center button" style="background-color: rgba(0, 80, 185, 0.712);" type="submit" onclick="Anim('switch@michael@sitting','idle', 8, 8,1, true)" value="Sitzen"></input><br>
+                <input class="center button" style="background-color: rgba(0, 80, 185, 0.712);" type="submit" onclick="stopAnim()" value="Stop Anim"></input><br>
+                <input class="center button" style="background-color: rgba(185, 6, 0, 0.712);" type="submit" onclick="ShowMenu(0)" value="Zurück"></input>
+            </div>
+            <div id="playerAnimation_Surrender" class="menu box" style="display: none;">
+                <input class="center button" style="background-color: rgba(0, 80, 185, 0.712);" type="submit" onclick="Anim('missminuteman_1ig_2','handsup_base', 8, 8,1, false, true)" value="Hände hoch"></input><br>
+                <input class="center button" style="background-color: rgba(0, 80, 185, 0.712);" type="submit" onclick="Anim('random@arrests','kneeling_arrest_idle', 8, 8,1, false, true)" value="Knien"></input><br>
+                <input class="center button" style="background-color: rgba(0, 80, 185, 0.712);" type="submit" onclick="Anim('random@arrests@busted','idle_a', 8, 8,1, false, true)" value="Knien Arme hinterm kopf"></input><br>
+                <input class="center button" style="background-color: rgba(185, 6, 0, 0.712);" type="submit" onclick="ShowMenu(3)" value="Zurück"></input>
+            </div>
+            <div id="playerList" class="menu box" style="display: none;">
+                <div id="dynamicPlayerList" class="prevent-select"></div>
+                <input class="center button" style="background-color: rgba(185, 6, 0, 0.712);" type="submit" onclick="ShowMenu(0)" value="Zurück"></input>
+            </div>
+            <div id="playerInteraction" class="menu box" style="display: none;">
+                <input class="center button" style="background-color: rgba(0, 80, 185, 0.712);" type="submit" onclick="AddFriend()" value="Freund hinzufügen" id="friendButton"></input><br>
+                <input class="center button" style="background-color: rgba(0, 80, 185, 0.712);" type="submit" onclick="GetBodyInfo()" value="Körper Details"></input><br>
+                <input class="center button" style="background-color: rgba(0, 80, 185, 0.712);" type="submit" onclick="ShowMoneyBox()" value="Geld geben"></input><br>
+                <input class="center button" style="background-color: rgba(0, 80, 185, 0.712);" type="submit" onclick="SearchPlayer()" value="Durchsuchen"></input><br>
+                <input style="display: none;" id="invateFirma" class="center button" style="background-color: rgba(0, 80, 185, 0.712);" type="submit" onclick="InvitePlayerFirma()" value="Einstellen"></input><br>
+                <input class="center button" style="background-color: rgba(185, 6, 0, 0.712);" type="submit" onclick="ShowPlayer()" value="Zurück"></input>
+            </div>
+            <div id="playerInfoBox" class="menu box" style="display: none;">
+                <p id="pName"></p><br>
+                <p id="pHeight"></p><br>
+                <p id="pEyes"></p><br>
+                <input class="center button" style="background-color: rgba(185, 6, 0, 0.712);" type="submit" onclick="BackToPlayerInteraction()" value="Zurück"></input>
+            </div>
+            <div id="playerGiveMoney" class="menu box" style="display: none;">
+                <form onsubmit="givePlayerMoney(event)">
+                        <input
+                            type="number"
+                            id="moneyTransfer"
+                            max="20000"
+                            min="1"
+                            placeholder="100"
+                            onfocusin="setInPText(1)" 
+                            onfocusout="setInPText(0)"
+                        /><br />
+                        <button class="button">Bestätigen</button>
+                </form><br>
+                <input class="center button" style="background-color: rgba(185, 6, 0, 0.712);" type="submit" onclick="BackToPlayerInteraction()" value="Zurück"></input>
+            </div>
+        </div>
+    </body>
+    <script src="js/javascript.js"></script>
+</html>

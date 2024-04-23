@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Inventory</title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body onclick="CloseMenu()" style="overflow: hidden">
+        <div style="width: 100%; height: 1300px" onmousemove="getCursor(event)" onmouseup="stopItemMove()">
+            <div
+                id="loading"
+                class="blink pagetext centered prevent-select"
+                style="color: black"
+                style="visibility: visible"
+            >
+                ...Inventar wird geöffnet...
+            </div>
+            <div id="page" style="visibility: hidden">
+                <img src="images/person.png" id="person" />
+                <div id="inventar">
+                    <p id="inf">Inventar</p>
+                </div>
+                <div class="itemInfo"><p id="itemName"></p></div>
+                <div id="backpack3" class="backpack">
+                    <p id="backinf3">Rucksack</p>
+                </div>
+                <div id="interactionInv" class="otherinf">
+                    <p id="interactionInvInfo">Auto</p>
+                </div>
+                <div id="cloth">
+                    <p id="clothinf"></p>
+                    <div
+                        id="cloth1"
+                        class="invplace"
+                        onmouseenter="mask(this)"
+                        data-place="3"
+                        style="
+                            background-image: url('./images/inv_mask.png');
+                            background-repeat: no-repeat;
+                            background-size: 70%;
+                            background-position: center;
+                        "
+                    ></div>
+                    <div
+                        id="cloth2"
+                        class="invplace"
+                        onmouseenter="tops(this)"
+                        data-place="3"
+                        style="
+                            background-image: url('./images/inv_shirt.png');
+                            background-repeat: no-repeat;
+                            background-size: 70%;
+                            background-position: center;
+                        "
+                    ></div>
+                    <div
+                        id="cloth3"
+                        class="invplace"
+                        onmouseenter="under(this)"
+                        data-place="3"
+                        style="
+                            background-image: url('./images/inv_hemd.png');
+                            background-repeat: no-repeat;
+                            background-size: 70%;
+                            background-position: center;
+                        "
+                    ></div>
+                    <div
+                        id="cloth6"
+                        class="invplace"
+                        onmouseenter="acces(this)"
+                        data-place="3"
+                        style="
+                            background-image: url('./images/inv_acces.png');
+                            background-repeat: no-repeat;
+                            background-size: 70%;
+                            background-position: center;
+                        "
+                    ></div>
+                    <div
+                        id="cloth4"
+                        class="invplace"
+                        onmouseenter="hose(this)"
+                        data-place="3"
+                        style="
+                            background-image: url('./images/inv_hose.png');
+                            background-repeat: no-repeat;
+                            background-size: 70%;
+                            background-position: center;
+                        "
+                    ></div>
+                    <div
+                        id="cloth5"
+                        class="invplace"
+                        onmouseenter="schuhe(this)"
+                        data-place="3"
+                        style="
+                            background-image: url('./images/inv_schuhe.png');
+                            background-repeat: no-repeat;
+                            background-size: 70%;
+                            background-position: center;
+                        "
+                    ></div>
+
+                    <div
+                        id="pop0"
+                        class="invplace"
+                        onmouseenter="hut(this)"
+                        data-place="3"
+                        style="
+                            background-image: url('./images/inv_hut.png');
+                            background-repeat: no-repeat;
+                            background-size: 70%;
+                            background-position: center;
+                        "
+                    ></div>
+                    <div
+                        id="pop1"
+                        class="invplace"
+                        onmouseenter="brille(this)"
+                        data-place="3"
+                        style="
+                            background-image: url('./images/inv_brille.png');
+                            background-repeat: no-repeat;
+                            background-size: 70%;
+                            background-position: center;
+                        "
+                    ></div>
+                    <div
+                        id="pop2"
+                        class="invplace"
+                        onmouseenter="ohrring(this)"
+                        data-place="3"
+                        style="
+                            background-image: url('./images/inv_ohr.png');
+                            background-repeat: no-repeat;
+                            background-size: 70%;
+                            background-position: center;
+                        "
+                    ></div>
+                    <div
+                        id="pop3"
+                        class="invplace"
+                        onmouseenter="uhr(this)"
+                        data-place="3"
+                        style="
+                            background-image: url('./images/inv_uhr.png');
+                            background-repeat: no-repeat;
+                            background-size: 70%;
+                            background-position: center;
+                        "
+                    ></div>
+                    <div
+                        id="pop4"
+                        class="invplace"
+                        onmouseenter="armband(this)"
+                        data-place="3"
+                        style="
+                            background-image: url('./images/inv_armband.png');
+                            background-repeat: no-repeat;
+                            background-size: 70%;
+                            background-position: center;
+                        "
+                    ></div>
+                </div>
+                <div id="boden" onmouseenter="mouseenterBoden()"><p>Boden:</p></div>
+                <!-- <div id="boden2" onmouseenter="mouseenterBoden()" onclick="bodenclick()" data-place="0"></div> -->
+
+                <div id="contextMenu" class="context-menu" style="display: none">
+                    <ul class="menu" id="menu"></ul>
+                </div>
+                <div id="split" class="context-menu splitdiv" style="display: none">
+                    <input type="number" id="splitamount" name="splitamount" min="1" value="1" /><br />
+                    <button class="button" onclick="splitItemAmount()">Bestätigen</button>
+                </div>
+                <form onsubmit="renameItemServer(event)">
+                    <div id="rename" class="context-menu splitdiv" style="display: none; width: 200px">
+                        <input
+                            type="text"
+                            id="renameItem"
+                            name="renameItem"
+                            maxlength="25"
+                            minlength="3"
+                            placeholder="Apfel"
+                            pattern="[A-Za-z0-9 -]*"
+                        /><br />
+                        <button class="button">Bestätigen</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+    <script src="js/javascript.js"></script>
+</html>

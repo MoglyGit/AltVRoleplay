@@ -1,0 +1,30 @@
+#info {
+    padding-left: 10px;
+    border-radius: 10px;
+    position: absolute;
+    user-select: none;
+    font-size: 2em;
+    width: 120px;
+    color: #eeeeee;
+    background-color: #fd7013;
+}
+.invplace {
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 70px;
+    float: left;
+    display: block;
+    height: 70px;
+    padding: 0px;
+    border: 4px solid #f1f1f1;
+}
+p {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+}
