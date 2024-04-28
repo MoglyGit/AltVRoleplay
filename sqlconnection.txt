@@ -1,0 +1,4 @@
+ip
+user
+pw
+database
