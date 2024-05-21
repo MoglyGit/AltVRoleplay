@@ -5,7 +5,7 @@ installation:
 2. Add the mysql from the mysql folder (there are some inputs from my test server, but care to clear all because the Gasstations or Firmas would be deletet)
 3. Now it should work 
 
-Sollte es probleme geben, könnt ihr ihn auch hier runterladen http://93.90.205.242/AltV/
+Sollte es probleme geben, könnt ihr jederzeit eine Issue melden
 
 Der erstellte Gamemode wurde von mir alleine erstellt und wird somit Bugs enthalten. Das meiste, was sich im Gamemode befindet, habe ich schon gezeigt.
 
