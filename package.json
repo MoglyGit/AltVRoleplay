@@ -1,0 +1,45 @@
+{
+    "name": "altv-quickstart-ts",
+    "version": "5.2.1",
+    "description": "TypeScript with alt:V Made Easy",
+    "scripts": {
+        "update": "altv-pkg d release",
+        "build": "node ./scripts/compiler.js && node ./scripts/copy.js && node ./scripts/transform.js",
+        "windows": "npm run build && altv-server.exe",
+        "linux": "npm run build && ./altv-server",
+        "dev": "node ./scripts/watch.js"
+    },
+    "author": "stuyk",
+    "license": "ISC",
+    "devDependencies": {
+        "@altv-vchat/types": "^1.0.5",
+        "@altv/types-client": "^2.8.8",
+        "@altv/types-natives": "^15.0.8",
+        "@altv/types-server": "^2.6.6",
+        "@altv/types-shared": "^1.5.9",
+        "@altv/types-webview": "^1.0.6",
+        "@swc/cli": "^0.1.60",
+        "@swc/core": "^1.3.52",
+        "@types/node": "^18.15.11",
+        "altv-pkg": "^2.0.11",
+        "fs-extra": "^11.1.1",
+        "glob": "^10.2.1",
+        "install": "^0.13.0",
+        "typescript": "latest",
+        "watcher": "^2.2.2"
+    },
+    "prettier": {
+        "tabWidth": 4,
+        "semi": true,
+        "printWidth": 120,
+        "arrowParens": "always",
+        "singleQuote": true
+    },
+    "type": "module",
+    "dependencies": {
+        "fkill": "^8.1.0",
+        "reflect-metadata": "^0.1.13",
+        "toml": "^3.0.0",
+        "tsyringe": "^4.8.0"
+    }
+}
