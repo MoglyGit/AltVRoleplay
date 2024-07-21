@@ -1,7 +1,7 @@
 ALT:V Roleplay Gamemode
 
 installation:
-1. Cut the ClientSide folder and add it in resources
+1. Cut the ClientSideJS folder and add it in resources, remove ClientSideFolder ( it is Typescrit, if you work with it other wise remove)
 2. Add the mysql from the mysql folder (there are some inputs from my test server, but care to clear all because the Gasstations or Firmas would be deletet)
 3. Now it should work 
 
