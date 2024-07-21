@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Register Page</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="style.css">
+	<script src="js/login.js"></script>
+  </head>
+  <body onmouseenter="music()" onmouseleave="stopmusic()">
+    <video autoplay muted loop id="myVideo">
+	<source src="screen/time.mp4" type="video/mp4">
+	  Your browser does not support HTML5 video.
+	</video>
+    <div class="content">
+      <h1>Willkommen</h1>
+	  <p>Es wurde kein Account gefunden</p>
+	  <p id="warning"></p>
+	  <div>
+		<div>
+        <label for="password">Password:</label>
+        <br><input type="password" id="pwd" placeholder="Password">
+		</div>
+		<div>
+        <input type="password" id="pwd2" placeholder="Password">
+		</div>
+        <input type="submit" onclick="Register()" value="Registrieren"></input>
+    </div>
+	<audio loop id="mu">
+	  <source src="screen/hero.mp3">
+	  Your browser does not support the audio element.
+	</audio>	
+  </body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Police</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="style.css">
+<style>
+html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
+</style>
+</head>
+<body>
+<div class="window w3-theme-l5">
+<!-- Navbar -->
+<div class="">
+ <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
+  <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+  <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i class="fa fa-home w3-margin-right"></i>Home</a>
+  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="News"><i class="fa fa-globe"></i></a>
+  <a href="personSearch.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Person Suche"><i class="fa fa-user"></i></a>
+  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Messages"><i class="fa fa-envelope"></i></a>
+  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="exit" onclick="alt.emit('closeView')" style="background-color: rgba(255, 0, 0, 0.767);">
+		Exit
+	  </a>
+ </div>
+</div>
+
+<!-- Page Container -->
+<div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">    
+  <!-- The Grid -->
+  <div class="w3-row">
+    <!-- Left Column -->
+    <div class="w3-col m3">
+      <!-- Profile -->
+
+      
+      <!-- Accordion -->
+      <div class="w3-card w3-round">    
+      </div>
+      <br>
+      
+    
+    <!-- End Left Column -->
+    </div>
+    
+    <!-- Middle Column -->
+    <div class="w3-col m7">
+    
+      <div class="w3-row-padding">
+        <div class="w3-col m12">
+          <div class="w3-card w3-round w3-white">
+            <div class="w3-container w3-padding">
+              <h6 class="w3-opacity">Person Suchen</h6>
+              <p contenteditable="true" class="w3-border w3-padding" id="personString" pattern="[A-Za-z ]*$/"></p>
+              <button type="button" class="w3-button w3-theme" onclick="searchPlayer()"><i class="fa fa-pencil"></i> Suchen</button> 
+			      </div>
+          </div>
+        </div>
+      </div>
+      
+      <div id="dbplayerlist">
+
+      </div>
+      
+    <!-- End Middle Column -->
+    </div>
+ 
+     
+      
+    <!-- End Right Column -->
+    </div>
+    
+  <!-- End Grid -->
+  </div>
+</div>
+<!-- End Page Container -->
+
+<script>
+  function searchPlayer()
+  {
+    const person = document.getElementById("personString").innerHTML;
+    if(person == null || person == "" || person == " ")return;
+    if(!/^[A-Za-z ]*$/.test(person))return;
+    const myNode = document.getElementById("dbplayerlist");
+    myNode.innerHTML = '';
+    alt.emit("mdcPersonSearch", person);
+  }
+
+  alt.on("createdbPlayer",(fname,lname,sc, pid) => {
+    const newDiv = document.createElement("div");
+    newDiv.setAttribute("class","w3-container w3-card w3-white w3-round w3-margin w3-padding");
+    newDiv.setAttribute("id", ""+sc);
+    newDiv.innerHTML = "";
+    const newh4 = document.createElement("h4");
+    newh4.innerHTML = ""+fname+" "+lname +" (L"+pid+"S"+sc+")";
+    newDiv.appendChild(newh4);
+
+    const newform = document.createElement("form");
+    newform.addEventListener("submit", function(evt){
+      evt.preventDefault();
+      location.href = "personFind.html";
+      setPlayer(sc);
+    });
+    const newbutton = document.createElement("button");
+    newbutton.setAttribute("class","w3-button w3-theme");
+    newbutton.setAttribute("type","submit");
+    newbutton.innerHTML = "Auswählen";
+    newform.appendChild(newbutton);
+    newDiv.appendChild(newform);
+    document.getElementById("dbplayerlist").appendChild(newDiv);
+  });
+  // Accordion
+  document.body.addEventListener("keydown", (event) => {
+	if (event.keyCode == 27) {
+	  alt.emit("closeView");
+	  return;
+	}
+  });
+</script>
+<script src="js/scriptindex.js"></script>
+
+</body>
+</html> 

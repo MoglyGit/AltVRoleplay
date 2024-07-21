@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Speedometer</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="Tempomat">
+            <div id="speedbar"></div>
+            <p id="speedtext"><span id="speed">000 KM/H</span><span id="gear"> [N]</span></p>
+            <br />
+            <p id="range">000000km</p>
+            <div id="fillbarmax"></div>
+            <div id="fillbar"><span class="center" id="tank">100/100L</span></div>
+            <img id="lock" src="images/lock.png" height="30px" style="display: block" />
+            <img id="fillwarning" src="images/fill.png" height="30px" style="display: block" />
+            <img id="motor" src="images/motor.png" height="30px" style="display: block" />
+            <div id="nos" style="width: 30px">
+                <img src="images/nos.png" height="30px" style="display: block" />
+                <p id="noscharges">5x</p>
+            </div>
+        </div>
+    </body>
+    <script src="js/tacho.js"></script>
+</html>

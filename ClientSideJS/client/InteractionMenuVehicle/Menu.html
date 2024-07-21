@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Vehicle Menu</title>
+        <link rel="stylesheet" href="style.css" />
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    </head>
+    <body>
+        <div class="container">
+            <div id="menu" class="menu box">
+                <input class="center button" style="background-color: rgba(185, 166, 0, 0.712); display: none;" type="submit" onclick="Tunen()" value="Tuning" id="tuning0"></input>
+                <input class="center button" style="background-color: rgba(185, 166, 0, 0.712); display: none;" type="submit" onclick="Tuev()" value="Tuev Test" id="mechanic0"></input>
+                <input class="center button" style="background-color: rgba(185, 166, 0, 0.712); display: none;" type="submit" onclick="Repair()" value="Reparieren" id="mechanic1"></input>
+                <input class="center button" style="background-color: rgba(185, 166, 0, 0.712); display: none;" type="submit" onclick="ChangeLock()" value="Schloss wechseln" id="mechanic2"></input>
+                <input class="center button" style="background-color: rgba(0, 80, 185, 0.712); display: none;" type="submit" onclick="LockVehicle()" value="Aufschließen" id="lock"></input>
+                <input class="center button" style="background-color: rgba(0, 80, 185, 0.712); display: none;" type="submit" onclick="ShowTrunk()" value="Kofferraum" id="trunk"></input>
+                <input class="center button" style="background-color: rgba(0, 80, 185, 0.712); display: none;" type="submit" onclick="ToggleEngine()" value="Motor" id="engine"></input>
+                <input class="center button" style="background-color: rgba(0, 80, 185, 0.712); display: none;" type="submit" onclick="ToggleGurt()" value="Anschnallen" id="useGurt"></input>
+                <input class="center button" style="background-color: rgba(0, 80, 185, 0.712); display: none;" type="submit" onclick="ToggleAnker()" value="Anker" id="useAnker"></input>
+                <input class="center button" style="background-color: rgba(0, 80, 185, 0.712); display: none;" type="submit" onclick="ToggleTrunk()" value="Kofferraum" id="opentrunk"></input>
+                <input class="center button" style="background-color: rgba(0, 80, 185, 0.712); display: none;" type="submit" onclick="ShowNumberPlate()" value="Nummernschild ansehen" id="numberplate"></input>
+                <input class="center button" style="background-color: rgba(0, 80, 185, 0.712); display: none;" type="submit" onclick="ToggleFront()" value="Motorhaube" id="openfront"></input>
+                <input class="center button" style="background-color: rgba(0, 80, 185, 0.712); display: none;" type="submit" onclick="OpenHandschuh()" value="Handschuhfach" id="handschuh"></input>
+                <input class="center button" style="background-color: rgba(0, 80, 185, 0.712); display: none;" type="submit" onclick="ChangeSingalLight()" value="Sirene deaktivieren" id="sirenlight"></input>
+                <input class="center button" style="background-color: rgba(0, 80, 185, 0.712); display: none;" type="submit" onclick="DoShortSiren()" value="Kurze Sirene aktivieren" id="shortSiren"></input>
+                <input class="center button" style="background-color: rgba(185, 6, 0, 0.712);" type="submit" onclick="ExitVehicleMenu()" value="Schliessen"></input>
+            </div>
+            <div id="vehicleInfoBox" class="menu box" style="display: none;">
+                <p id="vehModelname"></p><br>
+                <p id="vehNumberInfo"></p><br>
+                <p id="vehTuev"></p><br>
+                <input class="center button" style="background-color: rgba(185, 6, 0, 0.712);" type="submit" onclick="Home()" value="Zurück"></input>
+            </div>
+        </div>
+    </body>
+    <script src="js/javascript.js"></script>
+</html>

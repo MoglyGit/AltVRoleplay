@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shop Owner</title>
+    <link rel="stylesheet" href="style.css">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+  </head>
+  <body>
+	<div class="center box" id="Menu">
+    <div id="text" class="center">
+      <p id="info">
+      </p>
+    </div>
+    <br>
+    <input class="center button" type="submit" onclick="showChange()" value="Name ändern"></input>
+    <br>
+    <input class="center button" type="submit" onclick="showChangePro()" value="Produkte ändern"></input>
+    <br>
+    <input class="center button" style="background-color: rgb(185, 0, 0);" type="submit" onclick="closeViewStore()" value="Schliessen"></input>
+  </div>
+
+  <div class="center box" id="namemenu" style="display: none;">
+    <div class="center">
+      <p id="infoinput">
+        Wie soll der Name des Ladens sein?
+      </p>
+    </div>
+    <form onsubmit="changeName(event)">
+      <input type="text" id="name" name="name" placeholder="24/7 Shop"></input><br>
+      <input class="center button" style="background-color: rgb(0, 148, 0);" type="submit" value="Ändern"></input>
+    </form>
+  </div>
+
+  <div class="center box" id="products0" style="display: none;">
+    <div class="center">
+      <p id="0SellInfoitem">
+        Welche Produkte willst du verkaufen?
+      </p>
+    </div>
+    <form onsubmit="changeSellItem(event,0)">
+      <label>Welches Produkt?</label><br>
+      <label>Angel</label>
+      <input type="checkbox" id="0Check1" value="Angel" onclick="selectOnlyThis(this.id,0)"></input><br>
+      <label>Spitzhacke</label>
+      <input type="checkbox" id="0Check2" value="Spitzhacke" onclick="selectOnlyThis(this.id,0)"></input><br>
+      <label>Dietrich</label>
+      <input type="checkbox" id="0Check3" value="Dietrich" onclick="selectOnlyThis(this.id,0)"></input><br><br>
+      <label>Preis</label>
+      <input type="number" id="0SellPrice" name="betrag" min="0" max="10000" step="1" value="0"></input><br>
+      <input class="center button" style="background-color: rgb(0, 148, 0);" type="submit" value="Übernehmen"></input>
+    </form>
+  </div>
+
+  <div class="center box" id="products1" style="display: none;">
+    <div class="center">
+      <p id="1SellInfoitem">
+        Welche Produkte willst du verkaufen?
+      </p>
+    </div>
+    <form onsubmit="changeSellItem(event,1)">
+      <label>Welches Produkt?</label><br>
+      <label>Erstehilfekasten</label>
+      <input type="checkbox" id="1Check1" value="Erstehilfekasten" onclick="selectOnlyThis(this.id,1)"></input><br>
+      <label>Werkzeugkasten</label>
+      <input type="checkbox" id="1Check2" value="Werkezugkasten" onclick="selectOnlyThis(this.id,1)"></input><br>
+      <label>Benzinkanister</label>
+      <input type="checkbox" id="1Check3" value="Benzin" onclick="selectOnlyThis(this.id,1)"></input><br><br>
+      <label>Preis</label>
+      <input type="number" id="1SellPrice" name="betrag" min="0" max="10000" step="1" value="0"></input><br>
+      <input class="center button" style="background-color: rgb(0, 148, 0);" type="submit" value="Übernehmen"></input>
+    </form>
+  </div>
+
+  <div class="center box" id="products2" style="display: none;">
+    <div class="center">
+      <p id="2SellInfoitem">
+        Welche Produkte willst du verkaufen?
+      </p>
+    </div>
+    <form onsubmit="changeSellItem(event,2)">
+      <label>Welches Produkt?</label><br>
+      <label>Wurm</label>
+      <input type="checkbox" id="2Check1" value="Wurm" onclick="selectOnlyThis(this.id,2)"></input><br>
+      <label>Made</label>
+      <input type="checkbox" id="2Check2" value="Made" onclick="selectOnlyThis(this.id,2)"></input><br>
+      <label>Apfel</label>
+      <input type="checkbox" id="2Check3" value="Apfel" onclick="selectOnlyThis(this.id,2)"></input><br><br>
+      <label>Preis</label>
+      <input type="number" id="2SellPrice" name="betrag" min="0" max="10000" step="1" value="0"></input><br>
+      <input class="center button" style="background-color: rgb(0, 148, 0);" type="submit" value="Übernehmen"></input>
+    </form>
+  </div>
+
+  <div class="center box" id="products3" style="display: none;">
+    <div class="center">
+      <p id="3SellInfoitem">
+        Welche Produkte willst du verkaufen?
+      </p>
+    </div>
+    <form onsubmit="changeSellItem(event,3)">
+      <label>Welches Produkt?</label><br>
+      <label>GPS</label>
+      <input type="checkbox" id="3Check1" value="Gps" onclick="selectOnlyThis(this.id,3)"></input><br>
+      <label>Hausschlüssel</label>
+      <input type="checkbox" id="3Check2" value="Hausschlüssel" onclick="selectOnlyThis(this.id,3)"></input><br>
+      <label>Hausschloss</label>
+      <input type="checkbox" id="3Check3" value="Hausschloss" onclick="selectOnlyThis(this.id,3)"></input><br><br>
+      <label>Fahrzeugschlüssel</label>
+      <input type="checkbox" id="3Check4" value="Fahrzeugschlüssel" onclick="selectOnlyThis(this.id,4)"></input><br><br>
+      <label>Preis</label>
+      <input type="number" id="3SellPrice" name="betrag" min="0" max="10000" step="1" value="0"></input><br>
+      <input class="center button" style="background-color: rgb(0, 148, 0);" type="submit" value="Übernehmen"></input>
+    </form>
+  </div>
+
+  <div class="center box" id="products4" style="display: none;">
+    <div class="center">
+      <p id="4SellInfoitem">
+        Welche Produkte willst du verkaufen?
+      </p>
+    </div>
+    <form onsubmit="changeSellItem(event,4)">
+      <label>Welches Produkt?</label><br>
+      <label>Kaffe</label>
+      <input type="checkbox" id="4Check1" value="Kaffe" onclick="selectOnlyThis(this.id,4)"></input><br>
+      <label>Energy</label>
+      <input type="checkbox" id="4Check2" value="Energy" onclick="selectOnlyThis(this.id,4)"></input><br>
+      <label>Bier</label>
+      <input type="checkbox" id="4Check3" value="Bier" onclick="selectOnlyThis(this.id,4)"></input><br><br>
+      <label>Preis</label>
+      <input type="number" id="4SellPrice" name="betrag" min="0" max="10000" step="1" value="0"></input><br>
+      <input class="center button" style="background-color: rgb(0, 148, 0);" type="submit" value="Übernehmen"></input>
+    </form>
+  </div>
+
+  <div class="center box" id="products5" style="display: none;">
+    <div class="center">
+      <p id="5SellInfoitem">
+        Welche Produkte willst du verkaufen?
+      </p>
+    </div>
+    <form onsubmit="changeSellItem(event,5)">
+      <label>Welches Produkt?</label><br>
+      <label>Hot Dog</label>
+      <input type="checkbox" id="5Check1" value="HotDog" onclick="selectOnlyThis(this.id,5)"></input><br>
+      <label>Stück Pizza</label>
+      <input type="checkbox" id="5Check2" value="Pizza" onclick="selectOnlyThis(this.id,5)"></input><br>
+      <label>Zigaretten</label>
+      <input type="checkbox" id="5Check3" value="Zigaretten" onclick="selectOnlyThis(this.id,5)"></input><br><br>
+      <label>Preis</label>
+      <input type="number" id="5SellPrice" name="betrag" min="0" max="10000" step="1" value="0"></input><br>
+      <input class="center button" style="background-color: rgb(0, 148, 0);" type="submit" value="Übernehmen"></input>
+    </form>
+  </div>
+
+  </body>
+  <script src="js/shopowned.js"></script>
+</html>
