@@ -1,0 +1,26 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgba(0, 0, 0, 0);
+}
+.box {
+    background-color: rgba(156, 156, 156, 0.774);
+    color: #fff;
+    padding: 20px 10px;
+    border-style: solid;
+    border-color: rgb(116, 116, 116);
+    width: 20%;
+    margin-top: 10%;
+    border-radius: 8px;
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.15);
+}
+.center {
+    margin: auto;
+    width: 50%;
+    border: 3px solid rgb(0, 87, 128);
+    padding: 10px;
+}
+p {
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 4px #363636;
+}

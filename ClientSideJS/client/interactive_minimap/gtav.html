@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Minimap</title>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body style="overflow: hidden">
+        <div
+            style="width: 100%; height: 1300px; border: 1px solid black"
+            onmousemove="getCursor(event)"
+            onmouseup="stopItemMove()"
+        >
+            <div
+                id="map"
+                class="invplace"
+                onmousedown="moveItem(this)"
+                onmouseup="stopItemMove()"
+                onmouseenter="say(this)"
+            >
+                <p>A</p>
+            </div>
+            <div
+                id="map1"
+                class="invplace"
+                onmousedown="moveItem(this)"
+                onmouseup="stopItemMove()"
+                onmouseenter="say(this)"
+            >
+                <p>B</p>
+            </div>
+            <div
+                id="map2"
+                class="invplace"
+                onmousedown="moveItem(this)"
+                onmouseup="stopItemMove()"
+                onmouseenter="say(this)"
+            >
+                <p>C</p>
+            </div>
+            <div
+                id="map3"
+                class="invplace"
+                onmousedown="moveItem(this)"
+                onmouseup="stopItemMove()"
+                onmouseenter="say(this)"
+            >
+                <p>D</p>
+            </div>
+            <div id="info"></div>
+        </div>
+        <script src="js/interactions.js"></script>
+    </body>
+</html>
