@@ -1,0 +1,77 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+#img1 {
+  padding: 8px 8px;
+  border-style: solid;
+  border-color: black;
+  margin-top: 10px;
+}
+
+#img2 {
+  position: absolute;
+  margin-top: 10px;
+  margin-left: 280px;
+}
+
+#persovor
+{
+  background-color: rgb(238, 238, 238);
+  color: #fff;
+  padding: 10px 20px;
+  border-style: solid;
+  border-color: rgb(116, 116, 116);
+  width: 480px;
+  height: 180px;
+  border-radius: 8px;
+  margin-left: 40%;
+  margin-top: 1%;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.15);
+
+}
+
+p {
+  font-size: 18px;
+  color: rgb(0, 0, 0);
+}
+
+#p1 {
+  position: absolute;
+  margin-left: 120px;
+  margin-top: -130px;
+  font-size: 30px;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2em; 
+}
+#p2 {
+  position: absolute;
+  margin-left: 120px;
+  margin-top: -90px;
+}
+#p3 {
+  position: absolute;
+  margin-left: 120px;
+  margin-top: -70px;
+}
+#p4 {
+  position: absolute;
+  margin-left: 120px;
+  margin-top: -50px;
+}
+#p5 {
+  position: absolute;
+  margin-left: 270px;
+  margin-top: -50px;
+}
+#p6 {
+  position: absolute;
+  margin-left: 120px;
+  margin-top: -30px;
+}
+#p7 {
+  position: absolute;
+  margin-left: 5px;
+  margin-top: 0px;
+}

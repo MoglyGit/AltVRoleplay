@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body onload="show(0)">
+    <!--Gesicht-->
+    <div class = "menu">
+      <input type="submit" value="Gesicht" onclick="show(0)"></input>
+      <input type="submit" value="Details" onclick="show(1)"></input>
+      <input type="submit" value="Rp-Szenario" onclick="show(2)"></input>
+      <input type="submit" value="Fertig" onclick="show(3)"></input>
+      <br>
+      <p>Drehen: A/D H&ouml;he: W/S Zoom: Q/E</p>
+    </div>
+    <div class="content" id="face">
+      <p id="warning"></p>
+      <h1>Geschlecht</h1>
+      <div>
+        <input type="submit" value="M&auml;nnlich" onclick="loadPed(0)"></input>
+        <input type="submit" value="Weiblich" onclick="loadPed(1)"></input>
+      </div>
+      <h1>Gesicht</h1>
+      <div>
+        <label>Vater:</label>
+        <br><input type="range" min="0" max="45" oninput="change(0,this.value)" id="vater"></input>
+        <br><label>Mother:</label>
+        <br><input type="range" min="0" max="45" value=22 oninput="change(1,this.value)" id="mom"></input>
+        <br><label>Mix</label>
+        <br><input type="range" min="0" max="1" oninput="change(4,this.value)" value="0" step=0.1 id="mix1"></input>
+        <br><label>Skin1:</label>
+        <br><input type="range" min="0" max="45" value=22 oninput="change(2,this.value)" id="skin1"></input>
+        <br><label>Skin2:</label>
+        <br><input type="range" min="0" max="45" value=22 oninput="change(3,this.value)" id="skin2"></input>
+        <br><label>Mix:</label>
+        <br><input type="range" min="0" max="1" oninput="change(5,this.value)" value=0 step=0.1 id="mix2"></input>
+      </div>
+    </div>
+    <div class="content2" id="face1">
+      <h1>Gesichtsz&uuml;ge</h1>
+      <div>
+        <br><label>Nasenbreite</label>
+        <br><input type="range" min="-1" max="1" oninput="changeMicroMorph(0,this.value)" value=0 step=0.1></input>
+        <br><label>Nasenspitze </label>
+        <br><input type="range" min="-1" max="1" oninput="changeMicroMorph(1,this.value)" value=0 step=0.1></input>
+        <br><label>Nasenl&auml;nge</label>
+        <br><input type="range" min="-1" max="1" oninput="changeMicroMorph(2,this.value)" value=0 step=0.1></input>
+        <br><label>NasenKr&uuml;mmung</label>
+        <br><input type="range" min="-1" max="1" oninput="changeMicroMorph(3,this.value)" value=0 step=0.1></input>
+        <br><label>Nasenspitze</label>
+        <br><input type="range" min="-1" max="1" oninput="changeMicroMorph(4,this.value)" value=0 step=0.1></input>
+        <br><label>Nasenknochenverdrehung</label>
+        <br><input type="range" min="-1" max="1" oninput="changeMicroMorph(5,this.value)" value=0 step=0.1></input>
+        <br><label>Augenbraue (oben/unten)</label>
+        <br><input type="range" min="-1" max="1" oninput="changeMicroMorph(6,this.value)" value=0 step=0.1></input>
+        <br><label>Augenbraue (tiefe)</label>
+        <br><input type="range" min="-1" max="1" oninput="changeMicroMorph(7,this.value)" value=0 step=0.1></input>
+        <br><label>Wangenknochen (h&ouml;he)</label>
+        <br><input type="range" min="-1" max="1" oninput="changeMicroMorph(8,this.value)" value=0 step=0.1></input>
+        <br><label>Wangenknochen (tiefe)</label>
+        <br><input type="range" min="-1" max="1" oninput="changeMicroMorph(9,this.value)" value=0 step=0.1></input>
+        <br><label>Wangenknochen (dicke)</label>
+        <br><input type="range" min="-1" max="1" oninput="changeMicroMorph(10,this.value)" value=0 step=0.1></input>
+        <br><label>Augen&ouml;ffnung</label>
+        <br><input type="range" min="-1" max="1" oninput="changeMicroMorph(11,this.value)" value=0 step=0.1></input>
+        <br><label>Lippendicke</label>
+        <br><input type="range" min="-1" max="1" oninput="changeMicroMorph(12,this.value)" value=0 step=0.1></input>
+        <br><label>Kieferknochenbreite </label>
+        <br><input type="range" min="-1" max="1" oninput="changeMicroMorph(13,this.value)" value=0 step=0.1></input>
+        <br><label>Form des Kieferknochens</label>
+        <br><input type="range" min="-1" max="1" oninput="changeMicroMorph(14,this.value)" value=0 step=0.1></input>
+        <br><label>Kinnknochen </label>
+        <br><input type="range" min="-1" max="1" oninput="changeMicroMorph(15,this.value)" value=0 step=0.1></input>
+        <br><label>Kinnknochenl&auml;nge</label>
+        <br><input type="range" min="-1" max="1" oninput="changeMicroMorph(16,this.value)" value=0 step=0.1></input>
+        <br><label>Form des Kinnknochens</label>
+        <br><input type="range" min="-1" max="1" oninput="changeMicroMorph(17,this.value)" value=0 step=0.1></input>
+        <br><label>Kinnloch</label>
+        <br><input type="range" min="-1" max="1" oninput="changeMicroMorph(18,this.value)" value=0 step=0.1></input>
+        <br><label>Halsdicke</label>
+        <br><input type="range" min="-1" max="1" oninput="changeMicroMorph(19,this.value)" value=0 step=0.1></input>
+      </div>
+    </div>
+
+   <!--Hair-->
+   <div class="content" id="hair">
+    <h1>Kopf</h1>
+    <div>
+      <label>Hautunreinheiten </label>
+      <br><input type="range" min="-1" max="23" value=-1 oninput="changePedHeadOverlay(0, this.value, null)" ></input>
+      <br><input type="range" min="0" max="1" value=1 oninput="changePedHeadOverlay(0, null, this.value)" step=0.1></input>
+      <br><label>Gesichtsbehaarung </label>
+      <br><input type="range" min="-1" max="28" value=-1 oninput="changePedHeadOverlay(1, this.value, null)" ></input>
+      <br><input type="range" min="0" max="1" value=1 oninput="changePedHeadOverlay(1, null, this.value)" step=0.1></input>
+      <br><label>Augenbrauen  </label>
+      <br><input type="range" min="-1" max="33" value=-1 oninput="changePedHeadOverlay(2, this.value, null)"></input>
+      <br><input type="range" min="0" max="1" value=1 oninput="changePedHeadOverlay(2, null, this.value)" step=0.1></input>
+      <br><label>Alterung   </label>
+      <br><input type="range" min="-1" max="14" value=-1 oninput="changePedHeadOverlay(3, this.value, null)"></input>
+      <br><input type="range" min="0" max="1" value=1 oninput="changePedHeadOverlay(3, null, this.value)" step=0.1></input>
+      <br><label>Schminke    </label>
+      <br><input type="range" min="-1" max="74" value=-1 oninput="changePedHeadOverlay(4, this.value, null)"></input>
+      <br><input type="range" min="0" max="1" value=1 oninput="changePedHeadOverlay(4, null, this.value)" step=0.1></input>
+      <br><label>Err&ouml;ten   </label>
+      <br><input type="range" min="-1" max="6" value=-1 oninput="changePedHeadOverlay(5, this.value, null)"></input>
+      <br><input type="range" min="0" max="1" value=1 oninput="changePedHeadOverlay(5, null, this.value)" step=0.1></input>
+      <br><label>Teint </label>
+      <br><input type="range" min="-1" max="11" value=-1 oninput="changePedHeadOverlay(6, this.value, null)"></input>
+      <br><input type="range" min="0" max="1" value=1 oninput="changePedHeadOverlay(6, null, this.value)" step=0.1></input>
+      <label>Sonnensch&auml;den </label>
+      <br><input type="range" min="-1" max="10" value=-1 oninput="changePedHeadOverlay(7, this.value, null)"></input>
+      <br><input type="range" min="0" max="1" value=1 oninput="changePedHead(7, null, this.value)" step=0.1></input>
+      <label>Lippenstift</label>
+      <br><input type="range" min="-1" max="9" value=-1 oninput="changePedHeadOverlay(8, this.value, null)"></input>
+      <br><input type="range" min="0" max="1" value=1 oninput="changePedHeadOverlay(8, null, this.value)" step=0.1></input>
+      <label>Muttermale</label>
+      <br><input type="range" min="-1" max="17" value=-1 oninput="changePedHeadOverlay(9, this.value, null)"></input>
+      <br><input type="range" min="0" max="1" value=1 oninput="changePedHeadOverlay(9, null, this.value)" step=0.1></input>
+      <label>Brusthaare </label>
+      <br><input type="range" min="-1" max="16" value=-1 oninput="changePedHeadOverlay(10, this.value, null)"></input>
+      <br><input type="range" min="0" max="1" value=1 oninput="changePedHeadOverlay(10, null, this.value)" step=0.1></input>
+      <label>K&ouml;rperunreinheiten  </label>
+      <br><input type="range" min="-1" max="11" value=-1 oninput="changePedHeadOverlay(11, this.value, null)"></input>
+      <br><input type="range" min="0" max="1" value=1 oninput="changePedHeadOverlay(11, null, this.value)" step=0.1></input>
+      <label>K&ouml;rperunreinheiten  add</label>
+      <br><input type="range" min="-1" max="1" value=-1 oninput="changePedHeadOverlay(12, this.value, null)"></input>
+      <br><input type="range" min="0" max="1" value=1 oninput="changePedHeadOverlay(12, null, this.value)" step=0.1></input>
+    </div>
+  </div>
+  <div class="content2" id="hair1">
+    <h1>Farbe</h1>
+    <div>
+      <br><label>Augenfarbe</label>
+      <br><input type="range" min="1" max="13" oninput="changeEyeColor(this.value)" value=1></input>
+      <br><label>Gesichtsbehaarung</label>
+      <br><input type="range" min="0" max="54" oninput="changePedHeadOverlayTint(0, this.value)" value=0></input>
+      <br><label>Augenbrauen</label>
+      <br><input type="range" min="0" max="54" oninput="changePedHeadOverlayTint(1, this.value)" value=0></input>
+      <br><label>Brusthaare</label>
+      <br><input type="range" min="0" max="54" oninput="changePedHeadOverlayTint(2, this.value)" value=0></input>
+      <br><label>Lippenstift</label>
+      <br><input type="range" min="0" max="54" oninput="changePedHeadOverlayTint(3, this.value)" value=0></input>
+      <br><label>Err&ouml;ten</label>
+      <br><input type="range" min="0" max="54" oninput="changePedHeadOverlayTint(4, this.value)" value=0></input>
+    </div>
+    <h1>Frisur</h1>
+    <div>
+      <br><label>Haarschnitt</label>
+      <br><input id="hair" type="range" min="0" max="76" oninput="changePedHairCut(this.value)" value=0></input>
+      <br><input type="range" min="0" max="55" oninput="changePedHairColour(this.value, null)" value=0></input>
+      <br><input type="range" min="0" max="55" oninput="changePedHairColour(null, this.value)" value=0></input>
+    </div>
+  </div> 
+
+  <div class="content3" id="rp">
+    <h1>Vergangenheit</h1>
+    <div>
+      <input type="submit" value="Kriminell" onclick="rpSzenario(0)"></input>
+      <input type="submit" value="Normal" onclick="rpSzenario(1)"></input>
+      <input type="submit" value="Eingereist" onclick="rpSzenario(2)"></input>
+    </div>
+    <div>
+      <h1>Start-Kleidung</h1>
+      <p id="info"></p>
+      <div>
+        <input type="submit" value="T-Shirt 1" onclick="startClothes(0)"></input>
+        <input type="submit" value="T-Shirt 2" onclick="startClothes(1)"></input>
+      </div>
+      <br>
+      <div>
+        <input type="submit" value="Hose 1" onclick="startClothes(2)"></input>
+        <input type="submit" value="Hose 2" onclick="startClothes(3)"></input>
+      </div>
+      <br>
+      <div>
+        <input type="submit" value="Schuhe 1" onclick="startClothes(4)"></input>
+        <input type="submit" value="Schuhe 2" onclick="startClothes(5)"></input>
+      </div>
+    </div>
+  </div>
+  <div class="content4" id="rpcrime">
+    <form>
+    <label for="crime">Verbrechen:</label><br>
+    <textarea id="crime" name="crime" placeholder="24/7 &uuml;berfallen" onfocus="keysFreeze(true)" onblur="keysFreeze(false)"></textarea><br>
+  </form>
+
+  </div>
+
+  <div class="content3" id="done">
+    <h1>Abschluss</h1>
+    <form onsubmit="spawn(event)">
+      <label for="fname">Name:</label><br>
+      <input type="text" id="fname" name="fname" placeholder="Bergsen" maxlength="15" pattern="[A-Za-z]*$" required onfocus="keysFreeze(true)" onblur="keysFreeze(false)" ><br>
+      <label for="lname">Vorname:</label><br>
+      <input type="text" id="lname" name="lname" placeholder="Leon" maxlength="15" pattern="[A-Za-z]*$" required onfocus="keysFreeze(true)" onblur="keysFreeze(false)"><br>
+      <label for="age">Alter:</label><br>
+      <input type="number" id="age" name="age" min="16" max="90" placeholder="24" required><br>
+      <label for="high">Gr&ouml;&szlig;e (cm):</label><br>
+      <input type="number" id="high" name="high" min="160" max="240" placeholder="170" required><br><br>
+
+      <input type="submit" value="Fertig"></input>
+    </form>
+  </div>
+
+	<script src="js/javascript.js"></script>
+  </body>
+</html>

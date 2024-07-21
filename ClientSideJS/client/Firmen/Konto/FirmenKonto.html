@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Firmen Konto</title>
+    <link rel="stylesheet" href="style.css">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+  </head>
+  <body>
+	<div id="mainmenu" class="center box">
+    <div id="text" class="center">
+      <p id="info">
+      </p>
+    </div>
+    <br>
+    <div id="auszug"></div>
+    <br>
+    <input class="center button" style="background-color: rgb(0, 113, 148);" type="submit" onclick="Showueberweisung()" value="Überweisung"></input>
+    <input class="center button" style="background-color: rgb(185, 0, 0);" type="submit" onclick="closeFirmaKonto()" value="Schliessen"></input>
+  </div>
+  <div id="ueberHud" style="display: none;" class="center box">
+    <img id="img1" class="center" src="images/logo.png" width="230" />
+    <br>
+    <div id="text" class="center">
+      <p id="info2">
+      </p>
+    </div>
+    <form onsubmit="ueberweisungFB(event)">
+      <input type="text" id="ueberid" name="ueberid" placeholder="FB-918232"></input><br>
+      <input type="number" id="ueberbetrag" name="ueberbetrag" min="1" max="1000000" step="1" value="1"></input><br>
+      <input type="text" id="ueberrs" name="ueberrs" min="0" placeholder="Apfel"></input><br>
+      <input class="center button" style="background-color: rgb(0, 148, 0);" type="submit" value="Überweisen"></input>
+    </form>
+    <input class="center button" style="background-color: rgb(185, 0, 0);" type="submit" onclick="HomeFB()" value="Zurück"></input>
+  </div>
+  </body>
+  <script src="js/firmenkonto.js"></script>
+</html>

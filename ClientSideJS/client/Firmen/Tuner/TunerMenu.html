@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Car Tuner</title>
+        <link rel="stylesheet" href="../CarDealer/style.css" />
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    </head>
+    <body style="overflow: hidden;">
+        <div class="container">
+            <div class="box" id="guide"><p id="guideInfo">Teile: A/D | R: Freie Cam</p></div>
+            <div class="box" id="tunerMainMenu2">
+                <input class="center buttonTuner" style="background-color: rgb(0, 113, 148);" type="submit" onclick="Show(1)" value="Außen"></input>
+                <input class="center buttonTuner" style="background-color: rgb(0, 113, 148);" type="submit" onclick="Show(2)" value="Innen"></input>
+                <input class="center buttonTuner" style="background-color: rgb(0, 113, 148);" type="submit" onclick="Show(3)" value="Motor"></input>
+                <input class="center buttonTuner" style="background-color: rgb(0, 113, 148);" type="submit" onclick="Show(4)" value="Neon"></input>
+                <input class="center buttonTuner" style="background-color: rgb(0, 113, 148);" type="submit" onclick="Show(5)" value="Verbesserungen"></input>
+                <input class="center buttonTuner" style="background-color: rgb(0, 113, 148);" type="submit" onclick="Show(6)" value="Reifen"></input>
+                <input class="center buttonTuner" style="background-color: rgb(0, 113, 148);" type="submit" onclick="Show(7)" value="Hupe"></input>
+            </div>
+            <div class="box tunerMainMenuInt" id="horn" style="display: none;">
+                <input class="center buttonTuner" style="background-color: rgb(148, 30, 0);" type="submit" onclick="Main()" value="Zurück"></input>
+                <p id="tireinfo">Hupe: </p>
+                <br><input id="hornType" type="range" min="0" max="51" oninput="changeHorn(this.value)" value=0 step=1></input>
+            </div>
+            <div class="box tunerMainMenuInt" id="tires" style="display: none;">
+                <input class="center buttonTuner" style="background-color: rgb(148, 30, 0);" type="submit" onclick="Main()" value="Zurück"></input>
+                <input class="center buttonTuner" style="background-color: rgb(148, 30, 0);" type="submit" onclick="resetAddMods()" value="Zurücksetzen"></input>
+                <p id="tireinfo">Reifen Type: </p>
+                <br><input id="tireType" type="range" min="0" max="12" oninput="changeTireType(this.value)" value=0 step=1></input>
+                <p>Reifen: </p>
+                <br><input id="tirevalue" type="range" min="-1" max="60" oninput="changeTire(this.value)" value=-1 step=1></input>
+                <p>Farbe: </p>
+                <br><input id="tirecol" type="range" min="0" max="255" oninput="changeTireCol(this.value)" value=0 step=1></input>
+            </div>
+            <div class="box tunerMainMenuInt" id="verbesserung" style="display: none;">
+                <input class="center buttonTuner" style="background-color: rgb(148, 30, 0);" type="submit" onclick="Main()" value="Zurück"></input>
+                <input class="center buttonTuner" style="background-color: rgb(148, 30, 0);" type="submit" onclick="resetAddMods()" value="Zurücksetzen"></input>
+                <input class="center buttonTuner" style="background-color: rgb(0, 113, 148);" type="submit" onclick="addMod(11,3,this)" value="Motor" id="ex11"></input>
+                <input class="center buttonTuner" style="background-color: rgb(0, 113, 148);" type="submit" onclick="addMod(12,2,this)" value="Bremsen"id="ex12"></input>
+                <input class="center buttonTuner" style="background-color: rgb(0, 113, 148);" type="submit" onclick="addMod(18,0,this)" value="Turbo"id="ex18"></input>
+                <input class="center buttonTuner" style="background-color: rgb(0, 113, 148);" type="submit" onclick="addMod(22,0,this)" value="Xenon"id="ex22"></input>
+                <input class="center buttonTuner" style="background-color: rgb(0, 113, 148);" type="submit" onclick="addMod(13,0,this)" value="Transmission 25"></input>
+                <input class="center buttonTuner" style="background-color: rgb(0, 113, 148);" type="submit" onclick="addMod(13,1,this)" value="Transmission 50"></input>
+                <input class="center buttonTuner" style="background-color: rgb(0, 113, 148);" type="submit" onclick="addMod(13,2,this)" value="Transmission 100"></input>
+                <input class="center buttonTuner" style="background-color: rgb(0, 113, 148);" type="submit" onclick="addNos()" value="Nitro 5x" id="ex99"></input>
+                <input class="center buttonTuner" style="background-color: rgb(0, 113, 148);" type="submit" onclick="addChip()" value="Chip Tuning" id="ex100"></input>
+            </div>
+            <div class="box tunerMainMenuInt" id="interior" style="display: none;">
+                <input class="center buttonTuner" style="background-color: rgb(148, 30, 0);" type="submit" onclick="Main()" value="Zurück"></input>
+                <input class="center buttonTuner" style="background-color: rgb(0, 113, 148);" type="submit" onclick="SelectMod(30)" value="Tacho Design"></input>
+                <input class="center buttonTuner" style="background-color: rgb(0, 113, 148);" type="submit" onclick="SelectMod(31)" value="Türen"></input>
+                <input class="center buttonTuner" style="background-color: rgb(0, 113, 148);" type="submit" onclick="SelectMod(32)" value="Sitze"></input>
+                <input class="center buttonTuner" style="background-color: rgb(0, 113, 148);" type="submit" onclick="SelectMod(33)" value="Lenkrad"></input>
+            </div>
+            <div class="box tunerMainMenuInt" id="engineBlock" style="display: none;">
+                <input class="center buttonTuner" style="background-color: rgb(148, 30, 0);" type="submit" onclick="Main()" value="Zurück"></input>
+                <input class="center buttonTuner" style="background-color: rgb(0, 113, 148);" type="submit" onclick="SelectMod(39)" value="Motor"></input>
+                <input class="center buttonTuner" style="background-color: rgb(0, 113, 148);" type="submit" onclick="SelectMod(40)" value="Luftfilter"></input>
+                <input class="center buttonTuner" style="background-color: rgb(0, 113, 148);" type="submit" onclick="SelectMod(41)" value="Motorstange"></input>
+            </div>
+            <div class="box" id="tunerMainMenu" style="display: none;">
+                <input class="center buttonTuner" style="background-color: rgb(148, 30, 0);" type="submit" onclick="Main()" value="Zurück"></input>
+                <input class="center buttonTuner" style="background-color: rgb(0, 113, 148);" type="submit" onclick="SelectMod(0)" value="Spoiler"></input>
+                <input class="center buttonTuner" style="background-color: rgb(0, 113, 148);" type="submit" onclick="SelectMod(1)" value="Front Bumber"></input>
+                <input class="center buttonTuner" style="background-color: rgb(0, 113, 148);" type="submit" onclick="SelectMod(2)" value="Rear Bumber"></input>
+                <input class="center buttonTuner" style="background-color: rgb(0, 113, 148);" type="submit" onclick="SelectMod(3)" value="Side Skirt"></input>
+                <input class="center buttonTuner" style="background-color: rgb(0, 113, 148);" type="submit" onclick="SelectMod(4)" value="Exhaust"></input>
+                <input class="center buttonTuner" style="background-color: rgb(0, 113, 148);" type="submit" onclick="SelectMod(5)" value="Frame"></input>
+                <input class="center buttonTuner" style="background-color: rgb(0, 113, 148);" type="submit" onclick="SelectMod(6)" value="Grille"></input>
+                <input class="center buttonTuner" style="background-color: rgb(0, 113, 148);" type="submit" onclick="SelectMod(7)" value="Hood"></input>
+                <input class="center buttonTuner" style="background-color: rgb(0, 113, 148);" type="submit" onclick="SelectMod(8)" value="Fender"></input>
+                <input class="center buttonTuner" style="background-color: rgb(0, 113, 148);" type="submit" onclick="SelectMod(9)" value="Right Fender"></input>
+                <input class="center buttonTuner" style="background-color: rgb(0, 113, 148);" type="submit" onclick="SelectMod(10)" value="Roof"></input>
+                <input class="center buttonTuner" style="background-color: rgb(0, 113, 148);" type="submit" onclick="SelectMod(25)" value="Plate Holder"></input>
+                <input class="center buttonTuner" style="background-color: rgb(0, 113, 148);" type="submit" onclick="SelectMod(44)" value="Exterior Parts"></input>
+                <input class="center buttonTuner" style="background-color: rgb(0, 113, 148);" type="submit" onclick="SelectMod(45)" value="Tank"></input>
+                <input class="center buttonTuner" style="background-color: rgb(0, 113, 148);" type="submit" onclick="SelectMod(46)" value="Door/Window"></input>
+                <input class="center buttonTuner" style="background-color: rgb(0, 113, 148);" type="submit" onclick="SelectMod(27)" value="Trim Design"></input>
+                <input class="center buttonTuner" style="background-color: rgb(0, 113, 148);" type="submit" onclick="SelectMod(42)" value="Arch Cover"></input>
+                <input class="center buttonTuner" style="background-color: rgb(0, 113, 148);" type="submit" onclick="SelectMod(43)" value="Antenna"></input>
+                <input class="center buttonTuner" style="background-color: rgb(0, 113, 148);" type="submit" onclick="SelectMod(48)" value="Livery"></input>
+            </div>
+            <div class="box" id="tunerMenu" style="display: none;">
+                <input class="center buttonTuner" style="background-color: rgb(148, 30, 0);" type="submit" onclick="Backaus()" value="Zurück"></input>
+                <input class="center buttonTuner" style="background-color: rgb(148, 30, 0);" type="submit" onclick="SelectNeutral()" value="Zurücksetzen"></input>
+            </div>
+            <div class="box tunerMenuProds" id="cardealerVehicleMenu" >
+                <p>Anpassung</p>
+                <p>Farbe: </p>
+                <input type="color" class="style1" id="primary" name="favcolor1" value="#FFFFFF" />
+                <input type="color" class="style1" id="secondary" name="favcolor2" value="#FFFFFF" />
+                <p>Produkte:</p>
+                <p id="carPRice">0</p>
+                <input class="center button" style="background-color: rgb(0, 148, 44);" type="submit" onclick="BuyTuning()" value="Einbauen"></input>
+                <input class="center button" style="background-color: rgb(148, 30, 0);" type="submit" onclick="CloseTuner()" value="Verlassen"></input>
+            </div>
+            <div class="box tunerMainMenuInt" id="tuningNeon" style="display: none;">
+                <input class="center buttonTuner" style="background-color: rgb(148, 30, 0);" type="submit" onclick="Backaus()" value="Zurück"></input>
+                <input class="center buttonTuner" style="background-color: rgb(148, 30, 0);" type="submit" onclick="ResetNeon()" value="Zurücksetzen"></input>
+                <p>Farbe: </p>
+                <input type="color" class="style1" id="neoncolor" name="neoncolor1" value="#FFFFFF" />
+            </div>
+            <div class="box" id="carDealerSearch">
+                <p id="error">Verbesserungen:</p>
+                <div id="extras"></div>
+            </div>
+        </div>
+    </body>
+    <script src="js/TunerJs.js"></script>
+</html>

@@ -1,0 +1,142 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+/*------ Style 2 ------*/
+.style1 {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.style1::-webkit-color-swatch {
+    border-radius: 15px;
+    border: none;
+}
+.style1::-moz-color-swatch {
+    border-radius: 15px;
+    border: none;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    font-size: 18px;
+    text-shadow: 2px 2px 4px #363636;
+    color: #ffffff;
+    height: 50px;
+    background-color: rgb(0, 146, 32);
+    border-radius: 8px;
+    transition: box-shadow 0.5s;
+}
+.button:hover {
+    box-shadow: 0px 0px 10px 5px #ffffff;
+}
+
+.flex-container {
+    position: fixed;
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: DodgerBlue;
+}
+.container {
+    position: relative;
+}
+
+#guide {
+    position: absolute;
+    top: 50rem;
+    left: 40%;
+}
+
+#cardealerMenu {
+    position: absolute;
+    top: -11rem;
+}
+#cardealerVehicleMenu {
+    position: absolute;
+    top: 4rem;
+    right: 16px;
+}
+#carDealerInfos {
+    position: absolute;
+    top: 30rem;
+}
+#carDealerSearch {
+    position: absolute;
+    top: -11rem;
+    right: 16px;
+}
+
+.box {
+    background-color: rgba(156, 156, 156, 0.774);
+    color: #fff;
+    padding: 20px 10px;
+    border-style: solid;
+    border-color: rgb(116, 116, 116);
+    width: 20%;
+    margin-top: 10%;
+    border-radius: 8px;
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.15);
+}
+
+p {
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 4px #363636;
+    margin-top: 0rem;
+}
+label {
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 4px #363636;
+    margin-top: 0rem;
+}
+
+input[type='text'] {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    padding: 15px;
+    border: solid;
+    border-radius: 8px;
+    height: 20px;
+    text-align: center;
+    font-size: 20px;
+}
+
+input[type='checkbox'] {
+    width: 50%;
+    margin-left: auto;
+    padding: 15px;
+    border: solid;
+    border-radius: 8px;
+    height: 20px;
+    text-align: center;
+    font-size: 20px;
+}
+input[type='number'] {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    padding: 15px;
+    border: solid;
+    border-radius: 8px;
+    height: 20px;
+    text-align: center;
+    font-size: 20px;
+}

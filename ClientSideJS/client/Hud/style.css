@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+}
+h1 {
+    display: inline;
+}
+#paydaytimer {
+    position: fixed;
+    background-color: #00000000;
+    width: 150px;
+    margin-left: 0%;
+    margin-top: 41%;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 5px black;
+}
+#time {
+    position: fixed;
+    background-color: #00000000;
+    width: 150px;
+    margin-left: 0%;
+    margin-top: 39%;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 5px black;
+}
+
+#abzug {
+    color: rgb(180, 0, 0);
+}
+
+#money {
+    position: fixed;
+    background-color: #00000000;
+    width: 700px;
+    margin-left: 0%;
+    margin-top: 42%;
+    color: rgb(30, 180, 0);
+    text-shadow: 2px 2px 5px black;
+}
+
+#hunger {
+    position: fixed;
+    background-color: #00000000;
+    width: 150px;
+    margin-left: 0%;
+    margin-top: 38%;
+    color: rgb(30, 180, 0);
+    text-shadow: 2px 2px 5px black;
+}
+#durst {
+    position: fixed;
+    background-color: #00000000;
+    width: 150px;
+    margin-left: 0%;
+    margin-top: 36%;
+    color: rgb(30, 180, 0);
+    text-shadow: 2px 2px 5px black;
+}
+#happy {
+    position: fixed;
+    background-color: #00000000;
+    width: 150px;
+    margin-left: 0%;
+    margin-top: 34%;
+    color: rgb(30, 180, 0);
+    text-shadow: 2px 2px 5px black;
+}
+#harn {
+    position: fixed;
+    background-color: #00000000;
+    width: 150px;
+    margin-left: 0%;
+    margin-top: 32%;
+    color: rgb(30, 180, 0);
+    text-shadow: 2px 2px 5px black;
+}
